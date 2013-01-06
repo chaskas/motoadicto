@@ -1,0 +1,65 @@
+
+sfGuardUserProfile:
+  actAs:
+    JCroppable:
+      images:     [ avatar ]
+  columns:
+    user_id:      { type: integer, notnull: true, unique: true }
+    rut:          { type: varchar(12), notnull: false, unique: true }
+    nacimiento_at: { type: timestamp, notnull: true }
+    sexo:         { type: boolean, notnull: true }
+    direccion:    { type: text, notnull: false }
+    ciudad:       { type: text, notnull: false }
+    comuna:       { type: text, notnull: false }
+    region:       { type: text, notnull: false }
+    pais:         { type: text, notnull: false }
+    telefono:     { type: text, notnull: false }
+    sitio_web:    { type: text, notnull: false }
+    club_id:      { type: integer, notnull: false }
+  relations:
+    sfGuardUser:  { alias: sfGuardUser, class: sfGuardUser, onDelete: CASCADE, local: user_id, foreign: id, foreignType: one, foreignAlias: Profile }
+    Club:         { onDelete: SET NULL, local: club_id, foreign: id }
+    
+Club:
+  actAs:
+    JCroppable:
+      images:     [ logo ]
+    Timestampable: ~
+    Sluggable:
+      fields:     [ nombre ]
+      unique:     true
+  columns:
+    nombre:       { type: varchar(50), notnull: true, unique: true }
+    aniversario_at: { type: timestamp, notnull: true }
+    descripcion:  { type: text, notnull: true }
+    region:       { type: text, notnull: false }
+    ciudad:       { type: text, notnull: true }
+    comuna:       { type: text, notnull: false }
+    pais:         { type: text, notnull: true }
+    url:          { type: text, notnull: false }
+    email:        { type: text, notnull: false }
+    user_id:      { type: integer, notnull: true, unique: true }
+  relations:
+    sfGuardUser:  { alias: sfGuardUser, class: sfGuardUser, onDelete: CASCADE, local: user_id, foreign: id, foreignType: one, foreignAlias: Club }
+
+ClubCandidate:
+  actAs:
+    Timestampable: ~
+  columns:
+    club_id:      { type: integer, notnull: true }
+    user_id:      { type: integer, notnull: true }
+  relations:
+    Club:         { alias: club, local: club_id, foreign: id, onDelete: CASCADE }
+    sfGuardUser:  { alias: sfGuardUser, class: sfGuardUser, onDelete: CASCADE, local: user_id, foreign: id }
+  indexes:
+    candidate_index:
+      fields:     [user_id,club_id]
+      type:       unique
+    
+Banner:
+  actAs:
+    JCroppable:
+      images:     [ slide ]
+  columns:
+    titulo:       { type: text, notnull: true }
+    descripcion:  { type: text, notnull: true }

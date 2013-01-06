@@ -1,0 +1,26 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_guard_plugin:
+     remember_key_expiration_age:  2592000   # 30 days in seconds
+     remember_cookie_name:         MotoAdicto
+  sfImageTransformPlugin:
+    default_adapter:  GD
+    mime_type:
+      auto_detect:    true
+      library:        gd_mime_type
+      
+  sfDoctrineJCroppablePlugin:
+    models:
+      Banner:
+        directory:      images/Banner
+        images:
+          slide:
+            padding:    { percent: 0, color: "#ffffff" }
+            ratio:      3.062
+            sizes:
+              banner:   { width: 920 }
+              mini:     { width: 230 }
+  max_width:            1024

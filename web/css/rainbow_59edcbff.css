@@ -1,0 +1,20 @@
+/* This is rainbow.css - a file that would let you easily override all the styles in the theme. un-comment the lines below to unleash the power of rainbow.css. #fff-is a white color. */
+
+/*
+hr, table.eekon thead th,table.eekon th,table.eekon td, blockquote p, a.button:hover,div.anythingSlider-default, #anythingslider ul, .ads_top ul, #right_c ul li.ads_sidebar ul, .post_heading, .info_wrap, #right_c ul li div.textwidget, #right_c ul li ul, #right_c ul li ul li, .wp-pagenavi .current, li.search, #stripez, footer .widget ul, footer .widget ul li, footer .widget ul li a:hover, div.anythingSlider .anythingWindow{
+border-color:#fff;
+}
+h1,h2,h3,h4,h5,h6,a,a:visited,a.button:hover,.newsflash a.button,#right_c ul li ul li a:hover,#search_submit,footer .widget ul li a:hover,table.eekon thead th{
+color:#fff;
+}
+a.button,.newsflash,.portfolio_item a img,#submit,a.button:visited{
+background-color:#fff;
+}
+a.button:hover{
+background-color:#000;
+}
+a:link { -webkit-tap-highlight-color: #fff; } 
+::-moz-selection{background: #fff;}
+::selection{background: #fff;}
+
+*/

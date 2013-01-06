@@ -1,0 +1,67 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        MotoAdicto.cl - Administración
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:
+    - reset.css
+    - text.css
+    - form.css
+    - buttons.css
+    - grid.css
+    - layout.css
+    - ui-darkness/jquery-ui-1.8.12.custom.css
+    - plugin/jquery.visualize.css
+    - plugin/facebox.css
+    - plugin/uniform.default.css
+    - plugin/dataTables.css
+    - custom.css
+
+  javascripts:
+    - jquery/jquery-1.5.2.min.js
+    - jquery/jquery-ui-1.8.12.custom.min.js
+    - misc/excanvas.min.js
+    - jquery/facebox.js
+    - jquery/jquery.visualize.js
+    - jquery/jquery.dataTables.min.js
+    - jquery/jquery.tablesorter.min.js
+    - jquery/jquery.uniform.min.js
+    - jquery/jquery.placeholder.min.js
+    - widgets.js
+    - dashboard.js
+
+  has_layout:     true
+  layout:         layout
+
+signinSuccess:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        MotoAdicto.cl - Administración - Login
+    #description:  symfony project
+    #keywords:     symfony, project
+    language:     es
+    #robots:       index, follow
+
+  stylesheets:
+    - -*
+    - reset.css
+    - text.css
+    - form.css
+    - buttons.css
+    - login.css
+
+  javascripts:    []
+
+  has_layout:     true
+  layout:         login

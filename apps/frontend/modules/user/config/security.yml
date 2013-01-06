@@ -1,0 +1,9 @@
+## YAML Template.
+---
+
+default:
+  is_secure: true
+register:
+  is_secure: false
+profile:
+  is_secure: true

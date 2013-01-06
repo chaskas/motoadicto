@@ -1,0 +1,10 @@
+## YAML Template.
+---
+Club:
+  club_staff:
+    nombre: Staff
+    ciudad: Concepción
+    Pais:   Chile
+    email:  staff@motoadito.cl
+    logo:   98b55f0a958bb28c8a5d2e29fb47b9c2698bb5ee.jpg
+    sfGuardUser: User_admin

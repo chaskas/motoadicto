@@ -1,0 +1,1080 @@
+/* 
+  style.css contains a reset, font normalization and some base styles.
+  
+  credit is left where credit is due.
+  additionally, much inspiration was taken from these projects:
+    yui.yahooapis.com/2.8.1/build/base/base.css
+    camendesign.com/design/
+    praegnanz.de/weblog/htmlcssjs-kickstart
+*/
+
+/* 
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+article, aside, figure, footer, header, 
+hgroup, nav, section { display:block; }
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+
+hr { display:block; height:1px; border:0; border-top:1px dashed #fac400; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+/* END RESET CSS */
+
+
+/*
+fonts.css from the YUI Library: developer.yahoo.com/yui/
+          Please refer to developer.yahoo.com/yui/fonts/ for font sizing percentages
+
+There are three custom edits:
+ * remove arial, helvetica from explicit font stack
+ * make the line-height relative and unit-less
+ * remove the pre, code styles
+*/
+body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; }
+
+table { font-size:inherit; font:100%; }
+
+select, input, textarea { font:99% sans-serif; }
+
+
+/* normalize monospace sizing 
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+ */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+ 
+
+
+/* 
+ * minimal base styles 
+ */
+
+
+/* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
+body, select, input, textarea { color:#444; }
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+   you'll want to define those yourself. */ 
+ 
+/* www.aestheticallyloyal.com/public/optimize-legibility/ */ 
+h1,h2,h3,h4,h5,h6 { font-weight: bold; color:#fac400; text-rendering: optimizeLegibility; }
+
+/* maxvoltar.com/archive/-webkit-font-smoothing */
+html { -webkit-font-smoothing: antialiased; }
+
+ 
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+a, a:active, a:visited { color:#607890; }
+a:hover { color:#036; }
+
+
+ul { margin-left:0px; }
+ol { margin-left:0px; list-style-type: decimal; }
+
+small { font-size:85%; }
+strong, th { font-weight: bold; color:#fff;}
+
+td, td img { vertical-align:top; } 
+table.ui-datepicker-calendar th span{ color: #1F1F1F; }
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+pre { 
+  padding: 15px; 
+  
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301 
+   Also: hot pink. */
+::-moz-selection{ background: #fac400; color:#000000; text-shadow: none; }
+::selection { background:#fac400; color:#000000; text-shadow: none; } 
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #fac400; } 
+
+
+/* always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+ 
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+
+
+/* 
+ * Non-semantic helper classes 
+ */
+
+/* for image replacement */
+.ir { display:block; text-indent:-999em; overflow:hidden; background-repeat: no-repeat; }
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display:none; visibility:hidden; } 
+
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/ 
+   Solution from: j.mp/visuallyhidden - Thanks Jonathan Neal! */
+.visuallyhidden { position:absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* >> The Magnificent CLEARFIX << */
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.clearfix { display: block; }
+
+
+
+
+
+ /* Primary Styles
+    Author: Daniel ÅÄ™czycki
+ */
+ 
+/* General */
+body {
+background:url(./images/background.jpg) no-repeat center top #000000;
+color:#e5dfe0;
+}
+a, a:visited{
+color:#fac400;
+text-decoration:none;
+}
+a:hover{
+color:#e5dfe0;
+}
+h1{
+font-size: 2.6154em; /* 34px */ line-height: 1.0588em; /* 36px */ margin-top: 0.5294em; margin-bottom: 0em; 
+}
+h2{
+font-size: 2.1538em; /* 28px */ line-height: 1.2857em; /* 36px */ margin-top: 0.6429em; margin-bottom: 0em; 
+}
+h3{
+font-size: 2em; /* 26px */ line-height: 1.3846em; /* 36px */ margin-top: 0.6923em; margin-bottom: 0em; 
+}
+h4{
+font-size: 1.8462em; /* 24px */ line-height: 1.5em; /* 36px */ margin-top: 0.75em; margin-bottom: 0em; 
+}
+h5{
+font-size: 1.2308em; /* 16px */ line-height: 1.125em; /* 18px */ margin-top: 1.125em; margin-bottom: 0em; 
+}
+h6{
+font-size: 1.0769em; /* 14px */ line-height: 1.2857em; /* 18px */ margin-top: 1.2857em; margin-bottom: 0em; 
+}
+p{
+font-size: 1em; /* 13px */ line-height: 1.3846em; /* 18px */ margin: 0; 
+}
+p a, p a:visited{
+text-decoration:underline;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
+font-size:0.65em;
+display:block;
+margin-top:-0.55em;
+color:#fff;
+margin-bottom:0.5em;
+}
+blockquote p{
+width:80%;
+border-left:10px solid #fac400;
+padding-left:12px;
+}
+.floatleft{
+float:left;
+}
+.floatright{
+float:right;
+}
+.textalignleft{
+display:block;
+text-align:left;
+}
+.textalignright{
+display:block;
+text-align:right;
+}
+img.floatleft{
+margin:4px 10px 0 0;
+}
+img.floatright{
+margin:4px 0 0 10px;
+}
+a.floatleft img{
+margin:4px 10px 0 0;
+}
+a.floatright img{
+margin:4px 0 0 10px;
+}
+#container{
+position:relative;
+z-index:1;
+}
+.border_magic{
+padding:5px;
+border:1px dashed #2e2e2e;
+background-color:#1e1e1e;
+}
+code{
+border:1px dashed #3e3e3e;
+padding:1px 5px;
+background-color:#232323;
+font:1em/1.4em Consolas,"Courier New",Courier,monospace;
+}
+pre{
+display:block;
+overflow:hidden;
+padding:15px 22px;
+border:1px dashed #3e3e3e;
+margin-bottom:30px;
+background-color:#232323;
+font:1em/1.4em Consolas,"Courier New",Courier,monospace;
+}
+#main ul{
+list-style:none outside none;
+margin:0 0 16px 6px;
+}
+#main ol{
+margin:0 0 16px 6px;
+list-style:outside decimal;
+padding-left:22px;
+}
+#main ul li, ol li{
+line-height: 1.3846em;
+}
+ul.bullet-dot li{
+background:url(./images/bullet-dot.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+ul.bullet-check li{
+background:url(./images/bullet-check.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+ul.bullet-cross li{
+background:url(./images/bullet-cross.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+ul.bullet-plus li{
+background:url(./images/bullet-plus.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+ul.bullet-minus li{
+background:url(./images/bullet-minus.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+ul.bullet-info li{
+background:url(./images/bullet-info.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+ul.bullet-arrow li{
+background:url(./images/bullet-arrow.png) no-repeat scroll 0 0.1em transparent;
+padding-left:22px;
+}
+p.confirmation{
+background:url(./images/confirmation.png) no-repeat 5px 5px;
+color:#000;
+border:1px solid #a4e673;
+font-weight:bold;
+padding:1px 5px;
+background-color:#64ba30;
+padding:11px 50px 15px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+margin: 10px;
+}
+p.warning{
+background:url(./images/warning.png) no-repeat 15px 13px;
+color:#000;
+border:1px solid #e5de73;
+font-weight:bold;
+padding:1px 5px;
+background-color:#fac400;
+padding:20px 57px 19px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+}
+p.information{
+background:url(./images/information.png) no-repeat 15px 13px;
+color:#000;
+border:1px solid #96dee9;
+font-weight:bold;
+padding:1px 5px;
+background-color:#43c8d0;
+padding:20px 57px 19px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+}
+p.error{
+background:url(./images/error.png) no-repeat 5px 5px;
+color:#000;
+border:1px solid #bc6262;
+font-weight:bold;
+padding:1px 5px;
+background-color:#a73431;
+padding:11px 50px 15px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+margin: 10px;
+}
+a.button,a.button:visited{
+text-transform:uppercase;
+text-decoration:none;
+font-weight:bold;
+color:#000;
+background-color:#fac400;
+padding:5px 14px 4px;
+}
+a.button:hover{
+color:#fac400;
+background-color:#000;
+border:1px solid #fac400;
+padding:4px 13px 3px;
+}
+table.eekon {
+    border-spacing: 0px;
+/*    border-collapse: collapse; */
+    background: #000;
+}
+table.eekon th {
+    text-align: left;
+    font-weight: normal;
+    padding: 0.2em 1em;
+    border: 0px;
+    border-bottom: 1px solid #fac400;
+}
+table.eekon td {
+    text-align: right;
+    border: 0px;
+    border-bottom: 1px solid #fac400;
+    border-left: 1px solid #fac400;
+    padding: 0.2em 1em;
+}
+table.eekon thead th {
+    text-align: center;
+    font-weight: bold;
+    color: #fac400;
+    border-left: 1px solid #fac400;
+}
+table.eekon th.Corner {
+    text-align: left;
+    border-left: 0px;
+}
+table.eekon tr.Odd {
+    background: #1e1e1e;
+}
+
+/* Header */
+#header{
+position:relative;
+height:120px;
+margin:0 0 14px 0;
+z-index:100;
+}
+#logo{
+position:absolute;
+bottom:-5px;
+left:-45px;
+height:auto;
+}
+
+#navix{
+position:absolute;
+bottom:-14px;
+right:-10px;
+font-size:26px;
+}
+#navix ul{
+float:right;
+}
+.sf-menu, .sf-menu * {
+margin:0;
+padding:0;
+list-style:none;
+}
+.sf-menu {
+line-height:1.0;
+}
+.sf-menu ul {
+position:absolute;
+top:-999em;
+width:10em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+width:100%;
+}
+.sf-menu li:hover {
+visibility:inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+float:left;
+position:relative;
+}
+.sf-menu a {
+display:block;
+position:relative;
+padding-left:14px;
+padding-bottom:12px;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+left:0;
+top:40px; /* match top ul list item height */
+z-index:99;
+background-color:#000;
+padding:0px;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+top:-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+left:10em; /* match ul width */
+top:0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+top:-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+left:10em; /* match ul width */
+top:0;
+}
+ul.sf-menu li li a{
+font-size:14px;
+text-transform: uppercase;
+font-weight:bold;
+padding:16px 0 16px 14px;
+}
+ul.sf-menu li li a:hover, ul.sf-menu li li:hover{
+background-color:#1e1e1e;
+}
+.sf-sub-indicator {
+display:none;
+}
+
+/* Slider */
+#slider{
+height:480px;
+margin:0 10px 0px;
+-moz-box-shadow: 0px -2px 15px #000;
+-webkit-box-shadow: 0px -2px 15px #000;
+box-shadow: 0px -2px 15px #000;
+}
+.anythingSlider{
+margin-bottom:10px;
+-moz-box-shadow: 0px -2px 15px #000;
+-webkit-box-shadow: 0px -2px 15px #000;
+box-shadow: 0px -2px 15px #000;
+}
+div.sliderfix{
+height:320px;
+}
+#anythingslider ul{
+border:10px solid #fac400;
+}
+#anythingslider ul li{
+list-style:none outside none;
+}
+.newsflash_container{
+position:relative;
+width:920px;
+height:300px;
+overflow:hidden;
+}
+.newsflash{
+background-color:#fac400;
+width:270px;
+padding:0 10px 4px 20px;
+position:absolute;
+top:0;
+right:0;
+color:#000;
+margin:20px 0 0;
+-moz-box-shadow: 0px 0px 7px #333;
+-webkit-box-shadow: 0px 0px 7px #333;
+box-shadow: 0px 0px 7px #333;
+border-radius: 5px 0 0 5px;
+-moz-border-radius: 5px 0 0 5px;
+}
+.newsflash h1{
+color:#000;
+font-size:36px;
+}
+.newsflash p{
+font-weight:bold;
+}
+.newsflash a.button{
+color:#fac400;
+background-color:#000;
+text-decoration:none;
+}
+.newsflash a.button:hover{
+color:#fff;
+}
+#gallery{
+}
+
+/* Ads */
+.ads_top{
+margin-bottom:10px;
+}
+.ads_top ul{
+border:10px solid #fac400;
+padding:2px;
+}
+.ads_top ul li{
+list-style:none outside none;
+display:inline;
+}
+.ads_top ul li a img{
+margin-bottom:-3px;
+}
+#right_c ul li.ads_sidebar h2{
+text-align:right;
+}
+#right_c ul li.ads_sidebar ul{
+border:5px solid #fac400;
+padding:10px 0px 1px 10px;
+margin:0;
+border-radius: 14px;
+-moz-border-radius: 14px;
+}
+#right_c ul li.ads_sidebar ul li{
+border:none;
+display:inline;
+}
+#right_c ul li.ads_sidebar ul li a{
+padding:0;
+margin:0;
+display:inline;
+}
+#right_c ul li.ads_sidebar ul li a img{
+padding:0 5px 5px 0;
+margin:0;
+}
+
+
+/* Content */
+#main{
+margin-bottom:30px;
+margin-top:20px;
+z-index:3;
+display:inline;
+float:left;
+position:relative;
+width: 100%;
+}
+.ie6 #main, .ie7 #main{
+overflow:hidden;
+}
+
+/* Content - Left Column */
+#left_c{
+margin-bottom:10px;
+}
+#left_c.grid_6{
+}
+.post_wrapper{
+margin:0 0 40px;
+}
+.post_heading{
+border-right:5px solid #fac400;
+padding-right:15px;
+position:relative;
+}
+.post_heading h1{
+line-height:30px;
+}
+.blackhole{
+position:absolute;
+bottom:0;
+right:-5px;
+width:5px;
+height:10px;
+background-color:#000000;
+}
+.ie6 .blackhole{
+width:8px;
+right:-8px;
+bottom:-1px;
+}
+.date{
+text-align:right;
+margin:0;
+position:relative;
+height:3.4em;
+}
+.date h1{
+position:absolute;
+top:-3px;
+right:22px;
+}
+.date h4{
+font-size:1.3em;
+position:absolute;
+top:-5px;
+right:0;
+letter-spacing: 0.5px;
+}
+.ie7 .date h4{
+top:-6px;
+}
+.date h5{
+font-size:1em;
+position:absolute;
+top:13px;
+right:0;
+}
+.info_wrap{
+border-bottom:10px solid #fac400;
+margin:0 0 10px 0;
+}
+.info_wrap h1, .info_wrap h2, .info_wrap h3, .info_wrap h4, .info_wrap h5, .info_wrap h6{
+margin:0;
+}
+.info_wrap p{
+font-family: Verdana, sans-serif; 
+font-size:0.85em;
+margin:-0.5em 0 0.5em 0;
+}
+.info_wrap p a{
+color:#645953;
+text-decoration:none;
+}
+.info_wrap p a:hover{
+color:#e5dfe0;
+}
+img.post_thumb_img{
+margin:-10px 0 10px 0;
+}
+
+
+/* Content - Right Column */
+#right_c{
+margin-bottom:10px;
+overflow:hidden;
+}
+#right_c.grid_6{
+}
+#right_c ul{
+margin:0 0 0 10px;
+}
+#right_c ul li{
+list-style:none;
+margin-bottom:23px;
+}
+#right_c ul li.widget_text h2.widgettitle{
+text-align:right;
+}
+#right_c ul li div.textwidget{
+border:5px solid #fac400;
+padding:12px 13px 0;
+border-radius: 14px;
+-moz-border-radius: 14px;
+}
+#right_c ul li div.textwidget p{
+margin:0 0 0.9em 0;
+}
+#right_c ul li ul{
+margin:9px 0 0 0;
+border-bottom:1px dashed #fac400;
+}
+#right_c ul li ul li{
+margin:0;
+border-top:1px dashed #fac400;
+}
+.ie6 #right_c ul li ul li{
+padding:15px 0 0 0;
+margin:0;
+}
+#right_c ul li ul li a{
+padding:8px 0;
+color:#e5dfe0;
+display:block;
+}
+.ie6 #right_c ul li ul li a{
+padding:0;
+margin:0;
+}
+#right_c ul li ul li a:hover{
+color:#fac400;
+}
+
+/* Portfolio */
+.portfolio{
+}
+.ie6 .portfolio, .ie7 .portfolio{
+overflow:hidden;
+}
+.portfolio_item{
+margin-bottom:20px;
+}
+.portfolio_item a{
+background:url(./images/zoom.png) no-repeat scroll -86px 0 transparent;
+display:block;
+}
+
+/* Pagination */
+.wp-pagenavi .pages{
+margin-right:3px;
+padding:5px;
+border:1px solid #1f1f1f;
+}
+.wp-pagenavi .current{
+padding:5px;
+margin:0 1px;
+border:1px dashed #fac400;
+}
+.wp-pagenavi .page, .wp-pagenavi .previouspostslink, .wp-pagenavi .nextpostslink{
+padding:5px;
+margin:0 1px;
+border:1px solid #1f1f1f;
+}
+.ie6 .wp-pagenavi .pages, .ie6 .wp-pagenavi .current, .ie6 .wp-pagenavi .page, .ie6 .wp-pagenavi .previouspostslink, .ie6 .wp-pagenavi .nextpostslink{
+zoom: 1; /* ie6 no-top/bottom border hack */
+}
+.ie7 .wp-pagenavi .pages, .ie7 .wp-pagenavi .current, .ie7 .wp-pagenavi .page, .ie7 .wp-pagenavi .previouspostslink, .ie7 .wp-pagenavi .nextpostslink{
+zoom: 1; /* ie7 no-top/bottom border hack */
+}
+
+/* Contact */
+#form_container{
+position:relative;
+margin-top:5px;
+}
+#form_main{
+display:block;
+width: 570px;
+margin: 0 auto;
+}
+#form_main small{
+margin-left:12px;
+color:#E5DFE0;
+}
+#form_main span{
+display:block;
+margin:0 0 12px 2px;
+color:#E5DFE0;
+}
+#submit{
+background-color:#fac400;
+border:none;
+display:block;
+width:90px;
+height:26px;
+color:#000;
+cursor:pointer;
+text-transform: uppercase;
+font-weight:bold;
+}
+#submit::-moz-focus-inner { border: 0; }
+input,input#sf_guard_user_username, input#sf_guard_user_email_address, input#sf_guard_user_password, input#sf_guard_user_password_confirmation, input#sf_guard_user_first_name, input#sf_guard_user_last_name{
+border:1px solid #3e3e3e;
+background-color:#000;
+height:13px;
+width:200px;
+padding:9px 8px;
+line-height:13px;
+color:#E5DFE0;
+}
+select#sf_guard_user_Profile_nacimiento_at_day, select#sf_guard_user_Profile_nacimiento_at_day option,
+select#sf_guard_user_Profile_nacimiento_at_month, select#sf_guard_user_Profile_nacimiento_at_month option,
+select#sf_guard_user_Profile_nacimiento_at_year, select#sf_guard_user_Profile_nacimiento_at_year option,
+select#sf_guard_user_Profile_sexo, select#sf_guard_user_Profile_sexo option,
+select#club_aniversario_at_day, select#club_aniversario_at_day option,
+select#club_aniversario_at_month, select#club_aniversario_at_month option,
+select#club_aniversario_at_year, select#club_aniversario_at_year option,
+textarea#club_descripcion
+{
+border:1px solid #3e3e3e;
+background-color:#000;
+/*height:13px;*/
+padding:9px 8px;
+line-height:13px;
+color:#E5DFE0;
+}
+#sf_guard_user_profile_avatar_delete {
+  width: 50px  !important;
+}
+input[type="file"]{
+border:1px solid #3e3e3e;
+background-color:#000;
+height:22px;
+padding:9px 8px;
+line-height:13px;
+color:#E5DFE0;
+width: 300px;
+}
+#ui-datepicker-div {
+  z-index: 9999; 
+}
+#name:focus, #email:focus{
+outline: none;
+}
+#comments{
+border:1px solid #3e3e3e;
+background-color:#000;
+width:390px;
+max-width:390px;
+height:100px;
+max-height:100px;
+margin-left:1px;
+padding:10px 8px;
+color:#E5DFE0;
+overflow:auto;
+display:block;
+}
+#comments:focus{
+outline: none;
+}
+form h2{
+margin-bottom:22px;
+}
+ul#form_response{
+color:#972e2e;
+margin:0;
+}
+ul#form_response li{
+margin-bottom:10px;
+}
+.success{
+color:#E5DFE0;
+}
+.loaderIcon{
+position:absolute;
+top:0;
+right:26px;
+}
+
+/* Forms */
+#search_input{
+background:transparent;
+border:1px solid #1f1f1f;
+height:16px;
+padding:8px 6px;
+color:#E5DFE0;
+width:199px;
+line-height:16px;
+}
+#search_input:focus{
+outline:none;
+}
+.ie6 #search_input{
+width:192px;
+}
+.ie7 #search_input{
+width:192px;
+}
+#search_submit{
+background:transparent;
+color:#fac400;
+font-weight:bolder;
+height:34px;
+border:1px solid #1f1f1f;
+width:73px;
+}
+.ie6 #search_submit{
+border:none;
+}
+.ie7 #search_submit{
+border:none;
+}
+li.search{
+border-bottom:10px solid #fac400;
+padding:0 0 15px 0;
+}
+.ie6 li.search{
+padding:0 0 21px 0;
+}
+.ie7 li.search{
+padding:0 0 21px 0;
+}
+
+/* Footer */
+#footer{
+float:left;
+padding:5px 0 20px;
+overflow:hidden;
+margin-top: 50px;
+}
+#stripez{
+border-top:10px dashed #fac400;
+margin-bottom:5px;
+}
+#footer .widget ul{
+list-style:none;
+margin:9px 10px 0 0;
+border-bottom:1px dashed #fac400;
+}
+#footer .widget ul li{
+margin:0;
+border-top:1px dashed #fac400;
+}
+.ie6 #footer .widget ul li{
+padding:15px 0 0 0;
+margin:0;
+}
+#footer .widget ul li a{
+padding:8px 0;
+color:#e5dfe0;
+display:block;
+}
+.ie6 #footer .widget ul li a{
+padding:0;
+margin:0;
+}
+#footer .widget ul li a:hover{
+color:#fac400;
+}
+#footer .widgettitle{
+margin-bottom:2px;
+}
+#footer ul.social_icons{
+border:none;
+}
+#footer ul.social_icons li{
+border:none;
+display:inline;
+}
+#footer ul.social_icons li a{
+display:inline;
+}
+.copyrights{
+font-size:0.8em;
+text-align:center;
+padding:10px 0;
+}
+
+/* 
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ */
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none; }
+
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+
+  a:after { content: " (" attr(href) ")"; } 
+
+  abbr:after { content: " (" attr(title) ")"; }
+  
+  .ir a:after { content: ""; }  /* Don't show links for images */
+  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  
+  img { page-break-inside: avoid; }
+
+  @page { margin: 0.5cm; }
+
+  p, h2, h3 { orphans: 3; widows: 3; }
+
+  h2, h3{ page-break-after: avoid; }
+}
+
+
+
+/*
+ * Media queries for responsive design
+ */
+
+@media all and (orientation:portrait) { 
+  /* Style adjustments for portrait mode goes here */
+  
+}
+
+@media all and (orientation:landscape) { 
+  /* Style adjustments for landscape mode goes here */
+  
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+  
+  
+  /* Prevent iOS, WinMobile from adjusting font size */
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+}
+.cufon-loading h2, .cufon-loading h1, .cufon-loading h3, .cufon-loading h4, .cufon-loading h5, .cufon-loading h6, .cufon-loading .menu ul li a, .cufon-loading .read_more_button a, .cufon-loading ul#nav li{
+visibility: hidden !important;
+}
+.nav-prev{display:none;}
+.nav-next{display:none;}
+
+#recaptcha_instructions_image {
+  color: #000000 !important;
+}
+#recaptcha_response_field {
+  background-color: #FFFFFF;
+}

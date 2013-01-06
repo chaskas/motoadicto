@@ -1,0 +1,6 @@
+## YAML Template.
+---
+sfGuardUserProfile:
+  profile_admin:
+    sfGuardUser:  User_admin
+    Club:         club_staff
