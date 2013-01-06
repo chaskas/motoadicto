@@ -1,6 +1,5 @@
 cache/*
 log/*
-web/uploads/*
 /nbproject/
 /plugins/.registry/
 /plugins/.channels/
