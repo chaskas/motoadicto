@@ -55,7 +55,8 @@
           &nbsp;
           <?php echo link_to(image_tag('icons/message_16.png','alt=Mensaje,title=Enviar Mensaje'),'@homepage'); ?>
           &nbsp;
-          <?php echo link_to(image_tag('icons/close_16.png','alt=Despedir,title=Despedir'),'@homepage'); ?>
+          <?php //echo link_to(image_tag('icons/close_16.png','alt=Despedir,title=Despedir'),'@homepage'); ?>
+          <?php echo jq_link_to_remote(image_tag('icons/close_16.png','alt=Despedir,title=Despedir'),array('update'=>'miembros-postulantes','url'=>'club/dismissMember?id='.$miembro->getSfGuardUser()->getId()), array('method' => 'delete', 'confirm' => '¿Est&aacute;s Seguro que deseas despedir a este miembro?')); ?>
         </td>
       </tr>
       <?php endif; ?>

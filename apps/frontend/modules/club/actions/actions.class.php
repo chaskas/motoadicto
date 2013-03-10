@@ -151,5 +151,12 @@ class clubActions extends sfActions
 
     $this->redirect('club_ListMiembros'); 
   }
+  public function executeDismissMember(sfWebRequest $request)
+  {
+    $member = Doctrine::getTable('sfGuardUser')->find($request->getParameter('id'));
+    $member->getProfile()->setClubId(null);
+    $member->save();
+    $this->redirect('club_ListMiembros');
+  }
 }
 
