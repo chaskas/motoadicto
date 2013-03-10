@@ -10,8 +10,10 @@ all:
       public_key:  6Le3t84SAAAAAPhbXnz0IDXy4EBrj3jwUf-hyhIn
   
   sf_guard_plugin:
-     remember_key_expiration_age:  2592000   # 30 days in seconds
-     remember_cookie_name:         MotoAdicto
+      remember_key_expiration_age:  2592000   # 30 days in seconds
+      remember_cookie_name:         MotoAdicto
+      success_signin_url:      @homepage # the plugin use the referer as default
+      success_signout_url:     @homepage         # the plugin use the referer as default
   
   sfImageTransformPlugin:
     default_adapter:  GD
