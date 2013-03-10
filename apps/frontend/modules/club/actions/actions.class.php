@@ -158,5 +158,11 @@ class clubActions extends sfActions
     $member->save();
     $this->redirect('club_ListMiembros');
   }
+  public function executeDeleteCandidate(sfWebRequest $request)
+  {
+    $club_candidate = Doctrine::getTable('ClubCandidate')->findOneByUserId($request->getParameter('id'));
+    $club_candidate->delete();
+    $this->redirect('club_ListMiembros');
+  }
 }
 
