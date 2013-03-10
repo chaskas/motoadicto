@@ -1,11 +1,10 @@
 <?php use_helper('jQuery'); ?>
-<div style="float: left;border-right: 5px solid #FAC400;">
-<h1>Editar Club</h1>
+<script>
 
-<?php include_partial('form', array('form' => $form,'club'=>$club)) ?>
-</div>
-<div id="miembros-postulantes" style="float: left;margin-left: 20px;">
-  <h1>Postulantes</h1>
+	Cufon.refresh();
+
+</script>
+<h1>Postulantes</h1>
   <div id="postulantes" >
     <table style="width: 300px;">
     <?php foreach($club->getCandidatos() as $candidato) : ?>
@@ -63,6 +62,3 @@
     <?php endforeach; ?>
     </table>
   </div>
-</div>
-<div style="clear: both;"></div>
-

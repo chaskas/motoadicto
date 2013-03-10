@@ -134,11 +134,22 @@ class clubActions extends sfActions
       $this->redirect('club_show',$club);
     }
   }
+  public function executeListMiembros(sfWebRequest $request)
+  {
+    $this->forward404Unless($club = $this->getUser()->getGuardUser()->getProfile()->getClub(), sprintf('Object club does not exist (%s).', $this->getUser()->getGuardUser()->getProfile()->getClub()->getId()));
+    $this->forward404Unless($this->getUser()->getGuardUser()->getProfile()->getUserId() == $club->getOwner());
+    $this->club = $this->getUser()->getGuardUser()->getProfile()->getClub();
+  }
   public function executeAddMember(sfWebRequest $request)
   {
-    $this->forward404Unless($request->isMethod(sfRequest::POST));
+    $postulante = Doctrine::getTable('sfGuardUser')->find($request->getParameter('id'));
+    $postulante->getProfile()->setClubId($this->getUser()->getGuardUser()->getProfile()->getClub()->getId());
+    $postulante->save();
 
-    return sfView::NONE;
+    $club_candidate = Doctrine::getTable('ClubCandidate')->findOneByUserId($request->getParameter('id'));
+    $club_candidate->delete();
+
+    $this->redirect('club_ListMiembros'); 
   }
 }
 

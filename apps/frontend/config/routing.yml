@@ -15,6 +15,13 @@ club_edit:
   param:   { module: club, action: edit }
   requirements: { sf_method: get }
  
+club_ListMiembros:
+  url:     /club/ListMiembros
+  class:   sfDoctrineRoute
+  options: { model: Club, type: object }
+  param:   { module: club, action: ListMiembros }
+  requirements: { sf_method: get }
+
 club_delete:
   url:     /club/delete/:id
   class:   sfDoctrineRoute
