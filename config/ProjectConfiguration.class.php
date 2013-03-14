@@ -13,6 +13,5 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfImageTransformPlugin');
     $this->enablePlugins('sfDoctrineJCroppablePlugin');
     $this->enablePlugins('sfFormExtraPlugin');
-    $this->enablePlugins('sfJqueryReloadedPlugin');
   }
 }

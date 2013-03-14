@@ -1,4 +1,11 @@
-<?php use_helper('jQuery'); ?>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.ajax').click(function(){
+        $('#miembros-postulantes').load(this.href);
+        return false;
+    });
+  });
+</script>
 <div style="float: left;border-right: 5px solid #FAC400;">
 <h1>Editar Club</h1>
 
@@ -25,10 +32,9 @@
           &nbsp;
           <?php echo link_to(image_tag('icons/message_16.png','alt=Mensaje,title=Enviar Mensaje'),'@homepage'); ?>
           &nbsp;
-          <?php echo jq_link_to_remote(image_tag('icons/check_mark_16.png','alt=Aprobar,title=Aprobar Postulaci&oacute;n'),array('update'=>'miembros-postulantes','url'=>'club/addMember?id='.$candidato->getSfGuardUser()->getId()), array('method' => 'delete', 'confirm' => '¿Est&aacute;s Seguro que deseas aprobar esta postulaci&oacute;n?')); ?>
+          <?php echo link_to(image_tag('icons/check_mark_16.png','alt=Aprobar,title=Aprobar Postulaci&oacute;n'),'club/addMember?id='.$candidato->getSfGuardUser()->getId(),array('class'=>'ajax', 'confirm' => '¿Est&aacute;s Seguro que deseas aprobar esta postulaci&oacute;n?')); ?>
           &nbsp;
-          <?php //echo link_to(image_tag('icons/close_16.png','alt=Eliminar,title=Eliminar Postulaci&oacute;n'),'@homepage'); ?>
-          <?php echo jq_link_to_remote(image_tag('icons/close_16.png','alt=Eliminar,title=Eliminar postulaci&oacute;n'),array('update'=>'miembros-postulantes','url'=>'club/deleteCandidate?id='.$candidato->getSfGuardUser()->getId()), array('method' => 'delete', 'confirm' => '¿Est&aacute;s Seguro que deseas eliminar esta postulaci&oacute;n?')); ?>
+          <?php echo link_to(image_tag('icons/close_16.png','alt=Eliminar,title=Eliminar Postulaci&oacute;n'),'club/deleteCandidate?id='.$candidato->getSfGuardUser()->getId(),array('class'=>'ajax', 'confirm' => '¿Est&aacute;s Seguro que deseas eliminar esta postulaci&oacute;n?')); ?>
         </td>
       </tr>
     <?php endforeach; ?>
@@ -57,7 +63,7 @@
           &nbsp;
           <?php echo link_to(image_tag('icons/message_16.png','alt=Mensaje,title=Enviar Mensaje'),'@homepage'); ?>
           &nbsp;
-          <?php echo jq_link_to_remote(image_tag('icons/close_16.png','alt=Despedir,title=Despedir'),array('update'=>'miembros-postulantes','url'=>'club/dismissMember?id='.$miembro->getSfGuardUser()->getId()), array('method' => 'delete', 'confirm' => '¿Est&aacute;s Seguro que deseas despedir a este miembro?')); ?>
+          <?php echo link_to(image_tag('icons/close_16.png','alt=Despedir,title=Despedir'),'club/dismissMember?id='.$miembro->getSfGuardUser()->getId(),array('class'=>'ajax', 'confirm' => '¿Est&aacute;s Seguro que deseas despedir a este miembro?')); ?>
         </td>
       </tr>
       <?php endif; ?>
