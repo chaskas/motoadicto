@@ -164,5 +164,9 @@ class clubActions extends sfActions
     $club_candidate->delete();
     $this->redirect('club_ListMiembros');
   }
+  public function executeGetMemberInfo(sfRequest $request)
+  {
+    $this->member = Doctrine::getTable('sfGuardUserProfile')->findOneByUserId($request->getParameter('id'));
+  }
 }
 

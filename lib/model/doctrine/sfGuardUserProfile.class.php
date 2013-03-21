@@ -27,4 +27,11 @@ class sfGuardUserProfile extends BasesfGuardUserProfile
     if($q) return true;
     else return false;
   }
+  public function getAge()
+  {
+    $birthDate = new DateTime($this->getNacimientoAt());
+    $now = new DateTime();
+    $interval = $now->diff($birthDate);
+    return $interval->y;
+  }
 }

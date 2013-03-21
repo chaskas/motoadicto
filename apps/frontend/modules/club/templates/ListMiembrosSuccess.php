@@ -1,9 +1,15 @@
 <script type="text/javascript">
 	Cufon.refresh();
   $(document).ready(function(){
-     $('.ajax').click(function(){
+    $('.ajax').click(function(){
         $('#miembros-postulantes').load(this.href);
         return false;
+    });
+    $('.fancybox').fancybox({
+      'autoDimensions'  : false,
+      'overlayOpacity'  : 0.8,
+      'overlayColor'    : '#000000',
+      'height'          : 250,
     });
   });
 </script>
@@ -23,7 +29,7 @@
           <h5 style="margin-top: 5px;"><?php echo $candidato->getSfGuardUser()->getUsername(); ?></h5>
         </td>
         <td style="vertical-align: middle;width: 100px;">
-          <?php echo link_to(image_tag('icons/resume_16.png','alt=Info,title=Informaci&oacute;n'),'@homepage'); ?>
+          <?php echo link_to(image_tag('icons/resume_16.png','alt=Info,title=Informaci&oacute;n'),'club/getMemberInfo?id='.$candidato->getSfGuardUser()->getId(),array('class'=>'fancybox')); ?>
           &nbsp;
           <?php echo link_to(image_tag('icons/message_16.png','alt=Mensaje,title=Enviar Mensaje'),'@homepage'); ?>
           &nbsp;
@@ -54,7 +60,7 @@
           <h5 style="margin-top: 5px;"><?php echo $miembro->getSfGuardUser()->getUsername(); ?></h5>
         </td>
         <td style="vertical-align: middle;width: 100px;">
-          <?php  echo link_to(image_tag('icons/resume_16.png','alt=Info,title=Informaci&oacute;n'),'@homepage'); ?>
+          <?php echo link_to(image_tag('icons/resume_16.png','alt=Info,title=Informaci&oacute;n'),'club/getMemberInfo?id='.$miembro->getSfGuardUser()->getId(),array('class'=>'fancybox')); ?>
           &nbsp;
           <?php echo link_to(image_tag('icons/message_16.png','alt=Mensaje,title=Enviar Mensaje'),'@homepage'); ?>
           &nbsp;
