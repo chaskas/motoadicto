@@ -7,14 +7,14 @@ club_new:
   options: { model: Club, type: object }
   param:   { module: club, action: new }
   requirements: { sf_method: get }
- 
+
 club_edit:
   url:     /club/edit
   class:   sfDoctrineRoute
   options: { model: Club, type: object }
   param:   { module: club, action: edit }
   requirements: { sf_method: get }
- 
+
 club_ListMiembros:
   url:     /club/ListMiembros
   class:   sfDoctrineRoute
@@ -35,7 +35,7 @@ club_EditLogo:
   options: { model: Club, type: object }
   param:   { module: club, action: EditLogo }
   requirements: { sf_method: get }
-  
+
 club_show:
   url:     /club/:slug
   class:   sfDoctrineRoute
@@ -44,7 +44,7 @@ club_show:
   requirements:
     slud: \w+
     sf_method: [get]
-    
+
 club_submit:
   url:     /club/:slug/submit
   class:   sfDoctrineRoute
@@ -53,6 +53,14 @@ club_submit:
   requirements:
     slud: \w+
     sf_method: [get]
+
+user_profile_club:
+  url:     /user/ProfileClub
+  class:   sfDoctrineRoute
+  options: { model: UserProfile, type: object }
+  param:   { module: user, action: ProfileClub }
+  requirements: { sf_method: get }
+
 # default rules
 homepage:
   url:   /

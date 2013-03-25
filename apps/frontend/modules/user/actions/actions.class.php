@@ -113,4 +113,16 @@ class userActions extends sfActions {
 
     $this->redirect('user/profile');
   }
+
+  public function executeProfileClub(sfWebRequest $request)
+  {
+    $this->user_profile = $this->getUser()->getGuardUser()->getProfile();
+  }
+
+  public function executeDeleteRequest(sfWebRequest $request)
+  {
+    $club_candidate = Doctrine::getTable('ClubCandidate')->findOneByUserId($request->getParameter('id'));
+    $club_candidate->delete();
+    $this->redirect('user_profile_club');
+  }
 }

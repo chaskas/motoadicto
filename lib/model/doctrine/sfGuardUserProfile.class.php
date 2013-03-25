@@ -12,19 +12,28 @@
  */
 class sfGuardUserProfile extends BasesfGuardUserProfile
 {
-  public function hasClub(){
+  public function hasClub()
+  {
     if($this->getClubId() == null){
       return false;
     } else return true;
   }
-  public function hasProfile(){
+  public function hasProfile()
+  {
     if($this->getProfile()){
       return false;
     } else return true;
   }
-  public function isCandidate(){
+  public function isCandidate()
+  {
     $q = Doctrine::getTable('ClubCandidate')->findOneByUserId($this->getUserId());
     if($q) return true;
+    else return false;
+  }
+  public function getClubCandidate()
+  {
+    $q = Doctrine::getTable('ClubCandidate')->findOneByUserId($this->getUserId());
+    if($q) return $q->getClub();
     else return false;
   }
   public function getAge()
